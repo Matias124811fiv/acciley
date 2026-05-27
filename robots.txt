@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://accileyabogados.netlify.app/sitemap.xml
+Sitemap: https://tuestudio.netlify.app/sitemap.xml
