@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Qué hacer si tuviste un accidente? | AcciLey Abogados</title>
+    <meta name="description" content="Guía paso a paso de qué hacer si tuviste un accidente de tránsito o laboral. AcciLey Abogados — consulta gratuita 24hs.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #C9A84C;
+            --gold-light: #D4B96A;
+            --gold-dark: #9E7B2E;
+            --navy: #0D1B3E;
+            --navy-light: #1A2B4A;
+            --black: #0A0A0A;
+            --white: #FFFFFF;
+            --gray-100: #F5F5F5;
+            --gray-200: #E8E8E8;
+            --gray-600: #666666;
+            --gray-800: #333333;
+            --grad-gold: linear-gradient(135deg, #C9A84C 0%, #F0D070 50%, #C9A84C 100%);
+            --grad-navy: linear-gradient(135deg, #0D1B3E 0%, #1A2B4A 100%);
+            --shadow-gold: 0 4px 30px rgba(201,168,76,0.3);
+            --shadow-lg: 0 20px 60px rgba(0,0,0,0.15);
+        }
+        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+        html { scroll-behavior:smooth; }
+        body { font-family:'Inter',sans-serif; background:#fff; color:var(--black); line-height:1.6; overflow-x:hidden; }
+        h1,h2,h3,h4 { font-family:'Playfair Display',serif; line-height:1.2; }
+        .container { max-width:1100px; margin:0 auto; padding:0 24px; }
+        .tag { display:inline-block; font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:14px; }
+        .gold-text { background:var(--grad-gold); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+        .divider { width:56px; height:3px; background:var(--grad-gold); margin:18px 0; border-radius:2px; }
+
+        /* NAV */
+        nav {
+            position:fixed; top:0; left:0; right:0; z-index:200;
+            background:rgba(13,27,62,0.97); backdrop-filter:blur(20px);
+            border-bottom:1px solid rgba(201,168,76,0.18);
+            padding:14px 0;
+        }
+        .nav-inner { display:flex; align-items:center; justify-content:space-between; }
+        .logo { display:flex; align-items:center; gap:11px; text-decoration:none; }
+        .logo-icon { width:38px; height:38px; background:rgba(201,168,76,0.12); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0; }
+        .logo-name { font-family:'Playfair Display',serif; font-size:19px; font-weight:700; color:#fff; line-height:1; }
+        .logo-name span { color:var(--gold); }
+        .logo-sub { font-size:9.5px; letter-spacing:2.5px; text-transform:uppercase; color:rgba(201,168,76,0.65); margin-top:2px; }
+        .nav-links { display:flex; gap:28px; list-style:none; align-items:center; }
+        .nav-links li { display:flex; align-items:center; }
+        .nav-links a { color:rgba(255,255,255,0.78); text-decoration:none; font-size:13.5px; font-weight:500; transition:color .2s; line-height:1; }
+        .nav-links a:hover { color:var(--gold); }
+        .nav-cta { background:var(--grad-gold) !important; color:var(--navy) !important; padding:9px 18px; border-radius:4px; font-weight:700 !important; }
+        .back-link { display:inline-flex; align-items:center; gap:7px; color:rgba(255,255,255,0.6) !important; font-size:13px !important; }
+        .back-link:hover { color:var(--gold) !important; }
+        .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:4px; }
+        .hamburger span { width:22px; height:2px; background:#fff; display:block; }
+
+        /* PAGE HERO */
+        .page-hero {
+            background:var(--navy); padding:140px 0 80px; position:relative; overflow:hidden;
+        }
+        .page-hero::before {
+            content:''; position:absolute; inset:0;
+            background:radial-gradient(ellipse at 20% 60%, rgba(201,168,76,0.08) 0%, transparent 55%);
+        }
+        .page-hero-inner { position:relative; z-index:1; }
+        .breadcrumb { display:flex; align-items:center; gap:8px; margin-bottom:24px; }
+        .breadcrumb a { color:rgba(255,255,255,0.45); font-size:13px; text-decoration:none; transition:color .2s; }
+        .breadcrumb a:hover { color:var(--gold); }
+        .breadcrumb span { color:rgba(255,255,255,0.25); font-size:13px; }
+        .breadcrumb .current { color:rgba(255,255,255,0.7); font-size:13px; }
+        .page-hero h1 { font-size:clamp(30px,4.5vw,54px); color:#fff; font-weight:800; margin-bottom:18px; }
+        .page-hero h1 .hl { background:var(--grad-gold); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+        .page-hero p { font-size:17px; color:rgba(255,255,255,0.65); max-width:600px; line-height:1.75; }
+
+        /* MAIN CONTENT */
+        main { padding:72px 0 96px; }
+
+        /* ALERT */
+        .alert {
+            background:rgba(201,168,76,0.08); border:1px solid rgba(201,168,76,0.3);
+            border-left:4px solid var(--gold); border-radius:8px;
+            padding:18px 22px; margin-bottom:56px; display:flex; gap:14px; align-items:flex-start;
+        }
+        .alert-icon { font-size:22px; flex-shrink:0; margin-top:2px; }
+        .alert p { color:var(--navy); font-size:14.5px; line-height:1.65; font-weight:500; }
+        .alert strong { color:var(--gold-dark); }
+
+        /* STEPS GRID */
+        .steps-section { margin-bottom:64px; }
+        .steps-section h2 { font-size:clamp(24px,3vw,34px); color:var(--navy); margin-bottom:10px; }
+        .steps-section > p { font-size:15.5px; color:var(--gray-600); margin-bottom:32px; line-height:1.7; }
+        .steps-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+        .step-card {
+            display:flex; gap:18px; align-items:flex-start;
+            padding:22px; background:#fff; border-radius:12px;
+            border:1px solid var(--gray-200); transition:.25s;
+        }
+        .step-card:hover { border-color:var(--gold); box-shadow:var(--shadow-gold); transform:translateY(-2px); }
+        .step-num {
+            width:38px; height:38px; background:var(--grad-gold); color:var(--navy);
+            font-weight:800; font-size:15px; border-radius:50%;
+            display:flex; align-items:center; justify-content:center; flex-shrink:0;
+        }
+        .step-body h4 { font-family:'Inter',sans-serif; font-size:14.5px; font-weight:700; color:var(--navy); margin-bottom:5px; }
+        .step-body p { font-size:13px; color:var(--gray-600); line-height:1.6; }
+
+        /* TIP BOX */
+        .tip {
+            background:var(--gray-100); border-radius:12px; padding:28px;
+            margin-bottom:64px; display:flex; gap:16px; align-items:flex-start;
+        }
+        .tip-icon { font-size:28px; flex-shrink:0; }
+        .tip h3 { font-family:'Inter',sans-serif; font-size:15px; font-weight:700; color:var(--navy); margin-bottom:6px; }
+        .tip p { font-size:14px; color:var(--gray-600); line-height:1.65; }
+
+        /* INFO SECTIONS */
+        .info-section { margin-bottom:56px; }
+        .info-section h2 { font-size:clamp(22px,3vw,30px); color:var(--navy); margin-bottom:14px; }
+        .info-section .divider { margin-bottom:22px; }
+        .info-list { list-style:none; }
+        .info-list li {
+            display:flex; gap:12px; padding:12px 0;
+            border-bottom:1px solid var(--gray-200); font-size:14.5px; color:var(--gray-800); line-height:1.55;
+        }
+        .info-list li:last-child { border-bottom:none; }
+        .info-list li::before { content:'✓'; color:var(--gold); font-weight:800; flex-shrink:0; margin-top:1px; }
+        .info-list li strong { color:var(--navy); }
+
+        /* 72H BANNER */
+        .banner-72 {
+            background:var(--grad-navy); border-radius:16px; padding:40px;
+            display:flex; gap:32px; align-items:center; margin-bottom:64px;
+        }
+        .banner-72 .bicon { font-size:52px; flex-shrink:0; }
+        .banner-72 h3 { color:#fff; font-size:22px; margin-bottom:8px; }
+        .banner-72 p { color:rgba(255,255,255,0.65); font-size:14.5px; line-height:1.7; }
+        .banner-72 p strong { color:var(--gold); }
+
+        /* SIDEBAR LAYOUT */
+        .content-layout { display:grid; grid-template-columns:1fr 340px; gap:48px; align-items:start; }
+        .sticky-sidebar { position:sticky; top:100px; }
+        .cta-card {
+            background:var(--grad-navy); border-radius:16px; padding:36px;
+            border:1px solid rgba(201,168,76,0.18); text-align:center;
+        }
+        .cta-card .emoji { font-size:48px; margin-bottom:16px; }
+        .cta-card h3 { color:#fff; font-size:20px; margin-bottom:10px; }
+        .cta-card p { color:rgba(255,255,255,0.6); font-size:13.5px; line-height:1.7; margin-bottom:24px; }
+        .cta-btn {
+            display:flex; align-items:center; justify-content:center; gap:9px;
+            background:var(--grad-gold); color:var(--navy); padding:14px 20px;
+            border-radius:7px; font-weight:700; font-size:14px; text-decoration:none; transition:.2s;
+            margin-bottom:12px;
+        }
+        .cta-btn:hover { transform:translateY(-2px); box-shadow:var(--shadow-gold); }
+        .cta-btn-sec {
+            display:flex; align-items:center; justify-content:center; gap:9px;
+            background:rgba(255,255,255,0.07); color:#fff; padding:13px 20px;
+            border-radius:7px; font-weight:600; font-size:13.5px; text-decoration:none; transition:.2s;
+            border:1px solid rgba(255,255,255,0.15);
+        }
+        .cta-btn-sec:hover { background:rgba(255,255,255,0.12); }
+        .cta-divider { border:none; border-top:1px solid rgba(255,255,255,0.1); margin:20px 0; }
+        .cta-note { font-size:11.5px; color:rgba(255,255,255,0.35); text-align:center; }
+        .emerg-link {
+            display:flex; align-items:center; gap:10px; padding:14px 16px;
+            background:rgba(255,80,80,0.1); border:1px solid rgba(255,80,80,0.25);
+            border-radius:8px; text-decoration:none; margin-top:14px; transition:.2s;
+        }
+        .emerg-link:hover { background:rgba(255,80,80,0.18); }
+        .emerg-link span { font-size:13.5px; font-weight:600; color:#FF6B6B; }
+
+        /* FOOTER */
+        footer { background:#060D1E; padding:36px 0; border-top:1px solid rgba(201,168,76,0.1); }
+        .foot-in { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; }
+        .foot-brand { display:flex; align-items:center; gap:11px; }
+        .foot-brand-icon { width:30px; height:30px; background:rgba(201,168,76,0.12); border-radius:6px; display:flex; align-items:center; justify-content:center; font-size:16px; }
+        .foot-name { font-family:'Playfair Display',serif; font-size:17px; font-weight:700; color:#fff; }
+        .foot-name span { color:var(--gold); }
+        .foot-tag { font-size:10.5px; color:rgba(255,255,255,0.3); margin-top:1px; }
+        .foot-copy { color:rgba(255,255,255,0.28); font-size:11.5px; }
+
+        /* WHATSAPP FLOAT */
+        .wa-float { position:fixed; bottom:28px; right:28px; z-index:999; }
+        .wa-btn {
+            display:flex; align-items:center; gap:11px; background:#25D366; color:#fff;
+            padding:15px 22px; border-radius:100px; text-decoration:none; font-weight:700; font-size:14.5px;
+            box-shadow:0 8px 28px rgba(37,211,102,0.4); animation:wafloat 3s ease-in-out infinite;
+        }
+        .wa-btn:hover { animation:none; transform:scale(1.05) translateY(-2px); }
+        @keyframes wafloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-5px)} }
+        .wa-btn svg { width:22px; height:22px; fill:#fff; }
+
+        @media(max-width:900px) {
+            .content-layout { grid-template-columns:1fr; }
+            .sticky-sidebar { position:static; }
+            .steps-grid { grid-template-columns:1fr; }
+            .banner-72 { flex-direction:column; text-align:center; }
+            .nav-links { display:none; }
+            .hamburger { display:flex; }
+        }
+        @media(max-width:600px) {
+            .wa-btn span { display:none; }
+            .wa-btn { padding:15px; border-radius:50%; }
+        }
+        .nav-open .nav-links {
+            display:flex !important; flex-direction:column;
+            position:absolute; top:68px; left:0; right:0;
+            background:rgba(13,27,62,0.98); padding:22px 28px; gap:16px;
+            border-top:1px solid rgba(201,168,76,0.2);
+        }
+    </style>
+</head>
+<body>
+
+<nav id="main-nav">
+    <div class="container">
+        <div class="nav-inner">
+            <a href="acciley.html" class="logo">
+                <div class="logo-icon">⚖️</div>
+                <div>
+                    <div class="logo-name">Acci<span>Ley</span></div>
+                    <div class="logo-sub">Abogados</div>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="acciley.html#servicios">Servicios</a></li>
+                <li><a href="acciley.html#resultados">Resultados</a></li>
+                <li><a href="acciley.html#por-que">Por qué elegirnos</a></li>
+                <li><a href="que-hacer.html" style="color:var(--gold);">¿Qué hacer?</a></li>
+                <li><a href="emergencias.html" style="color:#FF6B6B;">🚨 Emergencias</a></li>
+                <li><a href="acciley.html#contacto" class="nav-cta">Consulta gratis</a></li>
+            </ul>
+            <button class="hamburger" onclick="document.getElementById('main-nav').classList.toggle('nav-open')">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<div class="page-hero">
+    <div class="container">
+        <div class="page-hero-inner">
+            <div class="breadcrumb">
+                <a href="acciley.html">Inicio</a>
+                <span>/</span>
+                <span class="current">¿Qué hacer?</span>
+            </div>
+            <span class="tag">Guía de actuación</span>
+            <h1>¿Qué hacer si<br><span class="hl">tuviste un accidente?</span></h1>
+            <p>Aunque el golpe parezca leve, actuar bien en los primeros minutos puede marcar la diferencia en tu reclamo. Seguí esta guía.</p>
+        </div>
+    </div>
+</div>
+
+<main>
+    <div class="container">
+        <div class="content-layout">
+
+            <!-- MAIN COLUMN -->
+            <div>
+                <div class="alert">
+                    <div class="alert-icon">⚠️</div>
+                    <p><strong>Importante:</strong> Aunque te sientas bien, buscá atención médica dentro de las <strong>72 horas</strong> del accidente. Muchas lesiones (cervicales, traumatismos) no se sienten de inmediato pero pueden aparecer días después — y documentarlas a tiempo es clave para tu reclamo.</p>
+                </div>
+
+                <!-- STEPS -->
+                <div class="steps-section">
+                    <span class="tag">Paso a paso</span>
+                    <h2>Lo que tenés que hacer en el momento</h2>
+                    <p>Estos 6 pasos aseguran que tenés la documentación necesaria para hacer tu reclamo correctamente.</p>
+                    <div class="steps-grid">
+                        <div class="step-card">
+                            <div class="step-num">1</div>
+                            <div class="step-body">
+                                <h4>Fotografiá tu registro de conducir</h4>
+                                <p>Sacá foto a ambas caras de tu licencia de conducir para tener el dato a mano.</p>
+                            </div>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-num">2</div>
+                            <div class="step-body">
+                                <h4>Fotografiá tu DNI</h4>
+                                <p>Ambas caras. Necesitarás estos datos para las gestiones con el seguro.</p>
+                            </div>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-num">3</div>
+                            <div class="step-body">
+                                <h4>Fotografiá la póliza del otro conductor</h4>
+                                <p>Pedile que te muestre la tarjeta de seguro y sacale una foto. Nombre de aseguradora, número de póliza y vencimiento.</p>
+                            </div>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-num">4</div>
+                            <div class="step-body">
+                                <h4>Fotos del siniestro y los daños</h4>
+                                <p>Fotografiá desde varios ángulos: los vehículos, los daños, la posición final, las marcas en el asfalto y el contexto de la calle.</p>
+                            </div>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-num">5</div>
+                            <div class="step-body">
+                                <h4>Anotá datos del otro conductor</h4>
+                                <p>Nombre completo, DNI, patente del vehículo y número de celular. Si hay testigos, pediles sus datos también.</p>
+                            </div>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-num">6</div>
+                            <div class="step-body">
+                                <h4>Hacé la denuncia en tu seguro</h4>
+                                <p>Aunque el culpable sea el otro, denunciá en tu seguro. Es un trámite que te protege y es necesario para el proceso.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 72HS BANNER -->
+                <div class="banner-72">
+                    <div class="bicon">🏥</div>
+                    <div>
+                        <h3>Atención médica dentro de las 72 horas</h3>
+                        <p>Es uno de los pasos más importantes y el que más se olvida. <strong>Aunque no tengas dolor</strong>, concurrí a un médico o guardia y contales que tuviste un accidente. Las lesiones cervicales, traumatismos y contusiones pueden no manifestarse hasta días después — y sin el registro médico, el reclamo se complica enormemente.</p>
+                    </div>
+                </div>
+
+                <!-- WHAT TO AVOID -->
+                <div class="info-section">
+                    <span class="tag">Qué NO hacer</span>
+                    <h2>Errores que pueden perjudicar tu reclamo</h2>
+                    <div class="divider"></div>
+                    <ul class="info-list">
+                        <li><strong>No firmes nada</strong> en el lugar del accidente sin asesoramiento legal previo.</li>
+                        <li><strong>No aceptes acuerdos verbales</strong> ni promesas de que "te van a pagar" sin documentación.</li>
+                        <li><strong>No negocies directamente</strong> con la aseguradora sin un abogado — la primera oferta casi siempre es muy inferior a lo que corresponde.</li>
+                        <li><strong>No descartés el siniestro</strong> por considerarlo menor. Incluso daños leves pueden generar reclamos significativos.</li>
+                        <li><strong>No esperés demasiado</strong> para hacer la denuncia. Los plazos legales para reclamar son importantes.</li>
+                        <li><strong>No muevas los vehículos</strong> antes de sacar fotos si es posible.</li>
+                    </ul>
+                </div>
+
+                <!-- WHAT YOU CAN CLAIM -->
+                <div class="info-section">
+                    <span class="tag">Qué podés reclamar</span>
+                    <h2>Tipos de daño que cubrimos</h2>
+                    <div class="divider"></div>
+                    <ul class="info-list">
+                        <li><strong>Daños materiales:</strong> reparación o valor del vehículo, objetos dañados.</li>
+                        <li><strong>Daños físicos:</strong> lesiones, tratamientos médicos, internaciones, rehabilitación.</li>
+                        <li><strong>Daño psicológico:</strong> estrés postraumático, ansiedad derivada del accidente.</li>
+                        <li><strong>Pérdida de ingresos:</strong> si el accidente te impidió trabajar durante la recuperación.</li>
+                        <li><strong>Gastos derivados:</strong> medicamentos, traslados, asistencia de terceros.</li>
+                        <li><strong>Daño moral:</strong> compensación por el sufrimiento y la afectación a tu vida cotidiana.</li>
+                    </ul>
+                </div>
+
+                <!-- TIP -->
+                <div class="tip">
+                    <div class="tip-icon">💡</div>
+                    <div>
+                        <h3>¿Ya pasó un tiempo desde el accidente?</h3>
+                        <p>No importa si fue hace unos días o hace semanas — consultanos igual. Los plazos para reclamar varían según el caso pero en muchas situaciones aún estás a tiempo. Lo que no conviene es esperar más sin asesoramiento.</p>
+                    </div>
+                </div>
+
+                <!-- LABORAL -->
+                <div class="info-section">
+                    <span class="tag">Accidentes laborales</span>
+                    <h2>Si el accidente fue en el trabajo</h2>
+                    <div class="divider"></div>
+                    <ul class="info-list">
+                        <li>Notificá a tu empleador de inmediato y pedí que quede documentado por escrito.</li>
+                        <li>Concurrí al servicio médico designado por la ART lo antes posible.</li>
+                        <li>Guardá copia de toda la documentación: informes médicos, partes de accidente, diagnósticos.</li>
+                        <li>No renunciés ni firmes acuerdos con tu empleador sin consultar antes con un abogado.</li>
+                        <li>Si la ART rechaza la cobertura o la cierra prematuramente, tenés derecho a reclamar.</li>
+                        <li>Consultanos — defendemos tus derechos frente a empleadores y aseguradoras de riesgos (ART).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- SIDEBAR -->
+            <aside class="sticky-sidebar">
+                <div class="cta-card">
+                    <div class="emoji">⚖️</div>
+                    <h3>Consultá ahora, sin cargo</h3>
+                    <p>Contanos tu caso y te asesoramos de inmediato. Gratuito, sin compromiso, disponible las 24hs.</p>
+                    <a href="https://wa.me/541164608255?text=Hola!%20Quiero%20consultar%20sobre%20mi%20accidente" class="cta-btn" target="_blank">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741 1.051 1.03-3.83-.235-.374A9.868 9.868 0 011.139 12C1.14 6.009 6.014 1.138 12.003 1.138a9.856 9.856 0 016.98 2.899A9.851 9.851 0 0121.87 12c-.003 5.99-4.876 10.862-10.819 10.862m9.19-20.052A11.9 11.9 0 0012.003 0C5.465 0 .116 5.348.113 11.886c0 2.096.547 4.142 1.588 5.945L0 24l6.304-1.654a11.88 11.88 0 005.693 1.448h.005c6.543 0 11.893-5.349 11.896-11.887A11.84 11.84 0 0021.241 3.734"/></svg>
+                        Consultar por WhatsApp
+                    </a>
+                    <a href="tel:+541164608255" class="cta-btn-sec">📞 +54 11 6460-8255</a>
+                    <hr class="cta-divider">
+                    <p class="cta-note">Atención de urgencias 24hs · Consulta gratuita</p>
+                    <a href="emergencias.html" class="emerg-link">
+                        <span>🚨</span>
+                        <span>¿Situación de emergencia? Ver guía</span>
+                    </a>
+                </div>
+            </aside>
+
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="foot-in">
+            <div class="foot-brand">
+                <div class="foot-brand-icon">⚖️</div>
+                <div>
+                    <div class="foot-name">Acci<span>Ley</span> Abogados</div>
+                    <div class="foot-tag">Especialistas en accidentes · Buenos Aires, Argentina</div>
+                </div>
+            </div>
+            <div class="foot-copy">© 2025 AcciLey Abogados. Todos los derechos reservados.</div>
+        </div>
+    </div>
+</footer>
+
+<div class="wa-float">
+    <a href="https://wa.me/541164608255?text=Hola!%20Quiero%20consultar%20sobre%20mi%20accidente" class="wa-btn" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741 1.051 1.03-3.83-.235-.374A9.868 9.868 0 011.139 12C1.14 6.009 6.014 1.138 12.003 1.138a9.856 9.856 0 016.98 2.899A9.851 9.851 0 0121.87 12c-.003 5.99-4.876 10.862-10.819 10.862m9.19-20.052A11.9 11.9 0 0012.003 0C5.465 0 .116 5.348.113 11.886c0 2.096.547 4.142 1.588 5.945L0 24l6.304-1.654a11.88 11.88 0 005.693 1.448h.005c6.543 0 11.893-5.349 11.896-11.887A11.84 11.84 0 0021.241 3.734"/></svg>
+        <span>Consulta gratis</span>
+    </a>
+</div>
+
+<script>
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    window.addEventListener('load', () => window.scrollTo(0, 0));
+</script>
+</body>
+</html>

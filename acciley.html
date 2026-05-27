@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AcciLey Abogados | Especialistas en Accidentes de Tránsito y Laborales</title>
+    <meta name="description" content="Estudio AcciLey — Especialistas en accidentes de tránsito y laborales. Consulta gratuita, atención 24hs. WhatsApp: +54 11 6460-8255">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #C9A84C;
+            --gold-light: #D4B96A;
+            --gold-dark: #9E7B2E;
+            --navy: #0D1B3E;
+            --navy-light: #1A2B4A;
+            --black: #0A0A0A;
+            --white: #FFFFFF;
+            --gray-100: #F5F5F5;
+            --gray-200: #E8E8E8;
+            --gray-600: #666666;
+            --gray-800: #333333;
+            --grad-gold: linear-gradient(135deg, #C9A84C 0%, #F0D070 50%, #C9A84C 100%);
+            --grad-navy: linear-gradient(135deg, #0D1B3E 0%, #1A2B4A 100%);
+            --shadow-gold: 0 4px 30px rgba(201,168,76,0.3);
+            --shadow-lg: 0 20px 60px rgba(0,0,0,0.15);
+        }
+        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family:'Inter',sans-serif; background:var(--white); color:var(--black); line-height:1.6; overflow-x:hidden; }
+        h1,h2,h3,h4 { font-family:'Playfair Display',serif; line-height:1.2; }
+        .container { max-width:1200px; margin:0 auto; padding:0 24px; }
+        .tag { display:inline-block; font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:14px; }
+        .gold-text { background:var(--grad-gold); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+        .divider { width:56px; height:3px; background:var(--grad-gold); margin:18px auto; border-radius:2px; }
+
+        /* ── NAV ─────────────────────────────────────── */
+        nav {
+            position:fixed; top:0; left:0; right:0; z-index:200;
+            background:rgba(13,27,62,0.97); backdrop-filter:blur(20px);
+            border-bottom:1px solid rgba(201,168,76,0.18);
+            padding:14px 0; transition:padding .3s;
+        }
+
+        .nav-inner { display:flex; align-items:center; justify-content:space-between; }
+        .logo { display:flex; align-items:center; gap:11px; text-decoration:none; }
+        .logo-icon { width:38px; height:38px; background:rgba(201,168,76,0.12); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0; }
+        .logo-name { font-family:'Playfair Display',serif; font-size:19px; font-weight:700; color:#fff; line-height:1; }
+        .logo-name span { color:var(--gold); }
+        .logo-sub { font-size:9.5px; letter-spacing:2.5px; text-transform:uppercase; color:rgba(201,168,76,0.65); margin-top:2px; }
+        .nav-links { display:flex; gap:28px; list-style:none; align-items:center; }
+        .nav-links li { display:flex; align-items:center; }
+        .nav-links a { color:rgba(255,255,255,0.78); text-decoration:none; font-size:13.5px; font-weight:500; transition:color .2s; line-height:1; display:block; }
+        .nav-links a:hover { color:var(--gold); }
+        .nav-cta { background:var(--grad-gold) !important; color:var(--navy) !important; padding:9px 18px; border-radius:4px; font-weight:700 !important; }
+        .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:4px; }
+        .hamburger span { width:22px; height:2px; background:#fff; display:block; transition:.3s; }
+
+        /* ── HERO ─────────────────────────────────────── */
+        .hero {
+            min-height:100vh; background:#fff; position:relative;
+            display:flex; align-items:center; overflow:hidden; padding-top:120px;
+        }
+        .hero-bg {
+            position:absolute; inset:0;
+            background:
+                radial-gradient(ellipse at 18% 55%, rgba(201,168,76,0.07) 0%, transparent 55%),
+                radial-gradient(ellipse at 80% 10%, rgba(13,27,62,0.04) 0%, transparent 50%);
+        }
+        .hero-grid {
+            position:absolute; inset:0;
+            background-image:linear-gradient(rgba(13,27,62,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(13,27,62,0.04) 1px,transparent 1px);
+            background-size:80px 80px;
+        }
+        .hero-inner {
+            position:relative; z-index:1; width:100%;
+            display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center;
+        }
+        .hero-badge {
+            display:inline-flex; align-items:center; gap:9px;
+            background:rgba(13,27,62,0.05); border:1px solid rgba(13,27,62,0.14);
+            border-radius:100px; padding:7px 16px; margin-bottom:22px;
+        }
+        .badge-dot { width:8px; height:8px; background:#22C55E; border-radius:50%; animation:pulse 2s infinite; }
+        @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.3)} }
+        .hero-badge span { font-size:11.5px; color:var(--gold-dark); font-weight:600; letter-spacing:.5px; }
+        .hero-title { font-size:clamp(34px,5vw,62px); color:var(--navy); font-weight:800; margin-bottom:22px; line-height:1.08; }
+        .hero-title .hl { display:block; background:var(--grad-gold); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+        .hero-sub { font-size:17px; color:var(--gray-600); margin-bottom:38px; line-height:1.75; }
+        .hero-btns { display:flex; gap:14px; flex-wrap:wrap; }
+        .btn-p {
+            display:inline-flex; align-items:center; gap:9px;
+            background:var(--grad-gold); color:var(--navy);
+            padding:15px 30px; border-radius:5px; font-weight:700; font-size:14.5px;
+            text-decoration:none; transition:.3s; box-shadow:var(--shadow-gold);
+        }
+        .btn-p:hover { transform:translateY(-2px); box-shadow:0 8px 40px rgba(201,168,76,0.42); }
+        .btn-s {
+            display:inline-flex; align-items:center; gap:9px;
+            background:transparent; color:var(--navy);
+            padding:15px 30px; border-radius:5px; font-weight:600; font-size:14.5px;
+            text-decoration:none; border:1px solid rgba(13,27,62,0.25); transition:.3s;
+        }
+        .btn-s:hover { background:rgba(13,27,62,0.05); border-color:var(--gold); color:var(--gold-dark); }
+        .hero-stats {
+            display:flex; gap:40px; margin-top:52px; padding-top:38px;
+            border-top:1px solid var(--gray-200); flex-wrap:wrap;
+        }
+        .hstat .num { font-family:'Playfair Display',serif; font-size:30px; font-weight:700; color:var(--gold); line-height:1; }
+        .hstat .lbl { font-size:12px; color:var(--gray-600); margin-top:4px; }
+
+        /* Hero card */
+        .hero-card {
+            background:#fff; border:1px solid var(--gray-200);
+            border-radius:16px; padding:36px; width:100%; max-width:400px;
+            box-shadow:0 8px 48px rgba(0,0,0,0.1);
+        }
+        .hcard-head { display:flex; align-items:center; gap:14px; margin-bottom:28px; }
+        .hcard-logo {
+            width:56px; height:56px; background:var(--grad-gold); border-radius:10px;
+            display:flex; align-items:center; justify-content:center; font-size:26px; flex-shrink:0;
+        }
+        .hcard-info h3 { color:var(--navy); font-size:16px; font-weight:700; }
+        .hcard-info p { color:var(--gold-dark); font-size:12px; margin-top:2px; }
+        .ritem { display:flex; justify-content:space-between; align-items:center; padding:13px 0; border-bottom:1px solid var(--gray-200); gap:12px; }
+        .ritem:last-of-type { border-bottom:none; }
+        .rlabel { font-size:12.5px; color:var(--gray-600); line-height:1.4; }
+        .rvalue { font-family:'Playfair Display',serif; font-size:15px; font-weight:700; color:var(--gold); white-space:nowrap; }
+        .rwin { margin-top:14px; padding:11px 14px; background:rgba(34,197,94,0.07); border:1px solid rgba(34,197,94,0.18); border-radius:8px; text-align:center; }
+        .rwin span { color:#16A34A; font-size:12.5px; font-weight:600; }
+
+        /* ── URGENCY BAR ──────────────────────────────── */
+        .urgency { background:var(--grad-gold); padding:15px 0; }
+        .urgency-in { display:flex; justify-content:center; align-items:center; gap:16px; flex-wrap:wrap; }
+        .urgency-in p { font-weight:700; color:var(--navy); font-size:14.5px; }
+        .urgency-in a { color:var(--navy); font-weight:800; text-decoration:none; border-bottom:2px solid var(--navy); }
+
+        /* ── SECTIONS ─────────────────────────────────── */
+        section { padding:96px 0; }
+        .sec-hd { text-align:center; margin-bottom:60px; }
+        .sec-hd h2 { font-size:clamp(30px,4vw,46px); margin-bottom:14px; color:var(--navy); }
+        .sec-hd p { font-size:17px; color:var(--gray-600); max-width:580px; margin:0 auto; line-height:1.72; }
+
+        /* ── SERVICES ─────────────────────────────────── */
+        .services { background:var(--gray-100); }
+        .svc-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:28px; }
+        .svc-card { background:#fff; border-radius:14px; overflow:hidden; box-shadow:0 3px 20px rgba(0,0,0,0.06); transition:.3s; }
+        .svc-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-lg); }
+        .svc-head { background:var(--grad-navy); padding:30px; position:relative; overflow:hidden; }
+        .svc-head::after { content:''; position:absolute; top:-24px; right:-24px; width:110px; height:110px; background:rgba(201,168,76,0.09); border-radius:50%; }
+        .svc-icon { font-size:44px; margin-bottom:14px; }
+        .svc-head h3 { color:#fff; font-size:22px; margin-bottom:6px; }
+        .svc-head p { color:rgba(255,255,255,0.65); font-size:13px; }
+        .svc-body { padding:28px 30px; }
+        .svc-list { list-style:none; }
+        .svc-list li { display:flex; gap:10px; padding:9px 0; border-bottom:1px solid var(--gray-200); font-size:13.5px; color:var(--gray-800); line-height:1.5; }
+        .svc-list li:last-child { border-bottom:none; }
+        .svc-list li::before { content:'▸'; color:var(--gold); font-size:11px; margin-top:3px; flex-shrink:0; }
+
+        /* ── RESULTS ──────────────────────────────────── */
+        .results { background:var(--navy); position:relative; overflow:hidden; }
+        .results::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at center, rgba(201,168,76,0.05) 0%,transparent 68%); }
+        .results .sec-hd h2 { color:#fff; }
+        .results .sec-hd p { color:rgba(255,255,255,0.58); }
+        .impact {
+            background:rgba(201,168,76,0.09); border:1px solid rgba(201,168,76,0.28);
+            border-radius:12px; padding:22px 28px; text-align:center; margin-bottom:44px;
+        }
+        .impact p { color:rgba(255,255,255,0.65); font-size:14.5px; }
+        .impact strong { display:block; font-family:'Playfair Display',serif; font-size:26px; color:var(--gold); margin:8px 0; }
+        .tbl-wrap { overflow-x:auto; border-radius:12px; border:1px solid rgba(201,168,76,0.2); }
+        table { width:100%; border-collapse:collapse; background:rgba(255,255,255,0.02); }
+        th { background:rgba(201,168,76,0.1); padding:14px 22px; text-align:left; font-size:10.5px; letter-spacing:2px; text-transform:uppercase; color:var(--gold); font-weight:700; border-bottom:1px solid rgba(201,168,76,0.2); }
+        td { padding:14px 22px; font-size:13.5px; color:rgba(255,255,255,0.78); border-bottom:1px solid rgba(255,255,255,0.05); }
+        tr:last-child td { border-bottom:none; }
+        tr:hover td { background:rgba(255,255,255,0.02); }
+        .amt { font-family:'Playfair Display',serif; font-size:15px; font-weight:700; color:var(--gold); }
+        .days { color:#22C55E; font-weight:600; }
+
+        /* ── WHY ──────────────────────────────────────── */
+        .why { background:#fff; }
+        .why-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; }
+        .wcard {
+            padding:36px 28px; border-radius:12px; border:1px solid var(--gray-200);
+            text-align:center; transition:.3s; position:relative; overflow:hidden;
+        }
+        .wcard::after { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; background:var(--grad-gold); transform:scaleX(0); transition:.3s; }
+        .wcard:hover { border-color:var(--gold); transform:translateY(-4px); box-shadow:var(--shadow-gold); }
+        .wcard:hover::after { transform:scaleX(1); }
+        .wicon { width:60px; height:60px; background:rgba(201,168,76,0.1); border-radius:11px; display:flex; align-items:center; justify-content:center; font-size:26px; margin:0 auto 20px; }
+        .wcard h3 { color:var(--navy); font-size:17px; margin-bottom:10px; }
+        .wcard p { color:var(--gray-600); font-size:13.5px; line-height:1.7; }
+
+        /* ── CHECKLIST ────────────────────────────────── */
+        .chk-section { background:var(--gray-100); }
+        .chk-inner { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center; }
+        .chk-content h2 { font-size:clamp(26px,3.5vw,40px); color:var(--navy); margin-bottom:14px; }
+        .chk-content > p { font-size:15.5px; color:var(--gray-600); margin-bottom:28px; line-height:1.72; }
+        .chk-list { list-style:none; }
+        .chk-list li {
+            display:flex; gap:14px; padding:14px 16px; margin-bottom:8px;
+            background:#fff; border-radius:8px; border:1px solid var(--gray-200);
+            font-size:14.5px; color:var(--gray-800); transition:.2s; align-items:center;
+        }
+        .chk-list li:hover { border-color:var(--gold); }
+        .chk-num {
+            width:26px; height:26px; background:var(--grad-gold); color:var(--navy);
+            font-weight:700; font-size:11px; border-radius:50%;
+            display:flex; align-items:center; justify-content:center; flex-shrink:0;
+        }
+        .chk-visual .big-card { background:var(--grad-navy); border-radius:18px; padding:44px; text-align:center; position:relative; overflow:hidden; }
+        .chk-visual .big-card::before { content:''; position:absolute; top:-40px; right:-40px; width:190px; height:190px; background:rgba(201,168,76,0.07); border-radius:50%; }
+        .big-card .emoji { font-size:72px; margin-bottom:20px; }
+        .big-card h3 { color:#fff; font-size:21px; margin-bottom:10px; }
+        .big-card p { color:rgba(255,255,255,0.58); font-size:13.5px; line-height:1.72; margin-bottom:22px; }
+        .big-card .cta { display:inline-flex; align-items:center; gap:8px; background:var(--grad-gold); color:var(--navy); padding:13px 26px; border-radius:6px; font-weight:700; font-size:13.5px; text-decoration:none; transition:.3s; }
+        .big-card .cta:hover { transform:translateY(-2px); box-shadow:var(--shadow-gold); }
+
+        /* ── ASEGURADORAS ─────────────────────────────── */
+        .aseg { background:#fff; padding:64px 0; }
+        .aseg .sec-hd { margin-bottom:36px; }
+        .chips { display:flex; flex-wrap:wrap; gap:14px; justify-content:center; }
+        .chip { padding:11px 22px; background:var(--gray-100); border:1px solid var(--gray-200); border-radius:7px; font-size:13.5px; font-weight:600; color:var(--navy); transition:.2s; }
+        .chip:hover { background:rgba(201,168,76,0.1); border-color:var(--gold); color:var(--gold-dark); }
+
+        /* ── CONTACT ──────────────────────────────────── */
+        .contact { background:var(--navy); position:relative; overflow:hidden; }
+        .contact::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at bottom, rgba(201,168,76,0.08) 0%,transparent 60%); }
+        .contact-in { position:relative; z-index:1; text-align:center; }
+        .contact-in h2 { color:#fff; font-size:clamp(30px,4vw,50px); margin-bottom:14px; }
+        .contact-in > p { color:rgba(255,255,255,0.58); font-size:17px; max-width:580px; margin:0 auto 44px; }
+        .copt { display:flex; gap:22px; justify-content:center; flex-wrap:wrap; }
+        .ccard {
+            background:rgba(255,255,255,0.04); border:1px solid rgba(201,168,76,0.2);
+            border-radius:14px; padding:36px 32px; text-align:center; width:260px;
+            transition:.3s; text-decoration:none; display:block;
+        }
+        .ccard:hover { background:rgba(201,168,76,0.08); border-color:var(--gold); transform:translateY(-4px); }
+        .ccard .ci { font-size:38px; margin-bottom:14px; }
+        .ccard h3 { color:#fff; font-size:19px; margin-bottom:6px; }
+        .ccard p { color:var(--gold); font-size:14.5px; font-weight:600; margin:0; }
+        .ccard .csub { color:rgba(255,255,255,0.38); font-size:11.5px; margin-top:5px; }
+
+        /* ── FOOTER ───────────────────────────────────── */
+        footer { background:#060D1E; padding:36px 0; border-top:1px solid rgba(201,168,76,0.1); }
+        .foot-in { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; }
+        .foot-brand { display:flex; align-items:center; gap:11px; }
+        .foot-brand-icon { width:30px; height:30px; background:rgba(201,168,76,0.12); border-radius:6px; display:flex; align-items:center; justify-content:center; font-size:16px; }
+        .foot-name { font-family:'Playfair Display',serif; font-size:17px; font-weight:700; color:#fff; }
+        .foot-name span { color:var(--gold); }
+        .foot-tag { font-size:10.5px; color:rgba(255,255,255,0.3); margin-top:1px; }
+        .foot-links { display:flex; gap:22px; list-style:none; }
+        .foot-links a { color:rgba(255,255,255,0.38); text-decoration:none; font-size:12.5px; transition:.2s; }
+        .foot-links a:hover { color:var(--gold); }
+        .foot-copy { color:rgba(255,255,255,0.28); font-size:11.5px; }
+
+        /* ── FLOATING WHATSAPP ────────────────────────── */
+        .wa-float { position:fixed; bottom:28px; right:28px; z-index:999; }
+        .wa-btn {
+            display:flex; align-items:center; gap:11px;
+            background:#25D366; color:#fff; padding:15px 22px; border-radius:100px;
+            text-decoration:none; font-weight:700; font-size:14.5px;
+            box-shadow:0 8px 28px rgba(37,211,102,0.4);
+            animation:wafloat 3s ease-in-out infinite;
+        }
+        .wa-btn:hover { animation:none; transform:scale(1.05) translateY(-2px); box-shadow:0 12px 36px rgba(37,211,102,0.5); }
+        @keyframes wafloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-5px)} }
+        .wa-btn svg { width:22px; height:22px; fill:#fff; flex-shrink:0; }
+        .wa-pulse {
+            position:absolute; top:-5px; right:-5px; width:18px; height:18px;
+            background:#FF4444; border-radius:50%; font-size:10px; color:#fff;
+            display:flex; align-items:center; justify-content:center; font-weight:800;
+            border:2px solid #060D1E;
+        }
+
+        /* ── RESPONSIVE ───────────────────────────────── */
+        @media(max-width:920px) {
+            .hero-inner { grid-template-columns:1fr; gap:44px; text-align:center; }
+            .hero-badge,.hero-btns,.hero-stats { justify-content:center; }
+            .hero-visual { display:none; }
+            .svc-grid { grid-template-columns:1fr; }
+            .why-grid { grid-template-columns:repeat(2,1fr); }
+            .chk-inner { grid-template-columns:1fr; gap:36px; }
+            .nav-links { display:none; }
+            .hamburger { display:flex; }
+        }
+        @media(max-width:600px) {
+            section { padding:60px 0; }
+            .why-grid { grid-template-columns:1fr; }
+            .hero-stats { gap:20px; }
+            .wa-btn .wa-txt { display:none; }
+            .wa-btn { padding:15px; border-radius:50%; }
+            table { font-size:12px; }
+            th,td { padding:11px 14px; }
+        }
+
+        /* Mobile nav overlay */
+        .nav-open .nav-links {
+            display:flex !important; flex-direction:column;
+            position:absolute; top:68px; left:0; right:0;
+            background:rgba(13,27,62,0.98); padding:22px 28px; gap:16px;
+            border-top:1px solid rgba(201,168,76,0.2);
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+    <div class="container">
+        <div class="nav-inner">
+            <a href="#" class="logo">
+                <div class="logo-icon">⚖️</div>
+                <div>
+                    <div class="logo-name">Acci<span>Ley</span></div>
+                    <div class="logo-sub">Abogados</div>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#resultados">Resultados</a></li>
+                <li><a href="#por-que">Por qué elegirnos</a></li>
+                <li><a href="que-hacer.html">¿Qué hacer?</a></li>
+                <li><a href="emergencias.html" style="color:#FF6B6B;">🚨 Emergencias</a></li>
+                <li><a href="#contacto" class="nav-cta">Consulta gratis</a></li>
+            </ul>
+            <button class="hamburger" onclick="document.getElementById('main-nav').classList.toggle('nav-open')">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="container">
+        <div class="hero-inner">
+            <div>
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    <span>Atención de urgencias 24hs · Consulta gratuita</span>
+                </div>
+                <h1 class="hero-title">
+                    ¿Te chocaron?
+                    <span class="hl">Nosotros nos<br>ocupamos de todo.</span>
+                </h1>
+                <p class="hero-sub">
+                    Especialistas en accidentes de tránsito y laborales. Defendemos tus derechos y conseguimos la compensación que merecés — sin que tengas que moverte.
+                </p>
+                <div class="hero-btns">
+                    <a href="https://wa.me/541164608255?text=Hola!%20Quiero%20consultar%20sobre%20un%20accidente" class="btn-p" target="_blank">
+                        <svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741 1.051 1.03-3.83-.235-.374A9.868 9.868 0 011.139 12C1.14 6.009 6.014 1.138 12.003 1.138a9.856 9.856 0 016.98 2.899A9.851 9.851 0 0121.87 12c-.003 5.99-4.876 10.862-10.819 10.862m9.19-20.052A11.9 11.9 0 0012.003 0C5.465 0 .116 5.348.113 11.886c0 2.096.547 4.142 1.588 5.945L0 24l6.304-1.654a11.88 11.88 0 005.693 1.448h.005c6.543 0 11.893-5.349 11.896-11.887A11.84 11.84 0 0021.241 3.734"/></svg>
+                        Consulta gratis ahora
+                    </a>
+                    <a href="#servicios" class="btn-s">
+                        Ver servicios
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hstat"><div class="num">24hs</div><div class="lbl">Atención urgencias</div></div>
+                    <div class="hstat"><div class="num">60 días</div><div class="lbl">Promedio de cobro</div></div>
+                    <div class="hstat"><div class="num">$24M</div><div class="lbl">Mejor indemnización</div></div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-card">
+                    <div class="hcard-head">
+                        <div class="hcard-logo">⚖️</div>
+                        <div class="hcard-info"><h3>AcciLey Abogados</h3><p>Casos recientes · Resultados reales</p></div>
+                    </div>
+                    <div class="ritem"><span class="rlabel">Accidente de tránsito · La Caja</span><span class="rvalue">$24.000.000</span></div>
+                    <div class="ritem"><span class="rlabel">Accidente de tránsito · San Cristóbal</span><span class="rvalue">$24.000.000</span></div>
+                    <div class="ritem"><span class="rlabel">Choque trasero · Fed. Patronal</span><span class="rvalue">$12.000.000</span></div>
+                    <div class="ritem"><span class="rlabel">Choque lateral · Fed. Patronal</span><span class="rvalue">$10.000.000</span></div>
+                    <div class="ritem"><span class="rlabel">Le tocaron la moto · Sancor</span><span class="rvalue">$3.800.000</span></div>
+                    <div class="rwin"><span>✓ Todos cobrados en menos de 60 días</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- URGENCY BANNER -->
+<div class="urgency">
+    <div class="container">
+        <div class="urgency-in">
+            <p>🚨 ¿Tuviste un accidente? No esperes — el tiempo en los reclamos es clave.</p>
+            <a href="https://wa.me/541164608255?text=Hola!%20Tuve%20un%20accidente%20y%20necesito%20asesoramiento" target="_blank">Escribí ahora: +54 11 6460-8255</a>
+        </div>
+    </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="servicios">
+    <div class="container">
+        <div class="sec-hd">
+            <span class="tag">Nuestros servicios</span>
+            <h2>Soluciones legales <span class="gold-text">para cada caso</span></h2>
+            <div class="divider"></div>
+            <p>En Estudio AcciLey nos dedicamos a resolver tanto accidentes de tránsito como laborales. No dudes en consultarnos.</p>
+        </div>
+        <div class="svc-grid">
+            <div class="svc-card">
+                <div class="svc-head">
+                    <div class="svc-icon">🚗</div>
+                    <h3>Accidentes de Tránsito</h3>
+                    <p>Colisiones, atropellos, motos, bicicletas y peatones</p>
+                </div>
+                <div class="svc-body">
+                    <ul class="svc-list">
+                        <li>Representación en colisiones, atropellos y accidentes de motos, bicicletas y peatones</li>
+                        <li>Gestión de reclamos ante aseguradoras y negociaciones directas</li>
+                        <li>Asesoramiento en daños materiales, lesiones personales y pérdida de ingresos</li>
+                        <li>Defensa en litigios de responsabilidad civil y penal</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="svc-card">
+                <div class="svc-head">
+                    <div class="svc-icon">🏗️</div>
+                    <h3>Accidentes Laborales</h3>
+                    <p>Lesiones en el trabajo, ART, enfermedades profesionales</p>
+                </div>
+                <div class="svc-body">
+                    <ul class="svc-list">
+                        <li>Representación por lesiones en el trabajo: caídas, golpes, exposición a sustancias peligrosas</li>
+                        <li>Tramitación de indemnizaciones y enfermedades profesionales</li>
+                        <li>Defensa frente a empleadores y aseguradoras de riesgos del trabajo (ART)</li>
+                        <li>Asesoramiento en procedimientos de reclamos y litigios laborales</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- RESULTS -->
+<section class="results" id="resultados">
+    <div class="container" style="position:relative;z-index:1;">
+        <div class="sec-hd">
+            <span class="tag">Resultados reales</span>
+            <h2>Casos que ganamos <span class="gold-text">para nuestros clientes</span></h2>
+            <div class="divider"></div>
+            <p>Números reales, clientes reales. Así son los resultados de confiar en AcciLey.</p>
+        </div>
+        <div class="impact">
+            <p>Ejemplo real: en un caso donde la aseguradora ofrecía solo $2.500.000…</p>
+            <strong>Conseguimos $10.000.000 — 4 veces más</strong>
+            <p>No aceptes la primera oferta. Consultanos primero.</p>
+        </div>
+        <div class="tbl-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tipo de caso</th>
+                        <th>Aseguradora</th>
+                        <th>Indemnización obtenida</th>
+                        <th>Plazo de cobro</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Accidente de tránsito</td>
+                        <td>La Caja Seguros</td>
+                        <td class="amt">$24.000.000</td>
+                        <td class="days">60 días</td>
+                    </tr>
+                    <tr>
+                        <td>Accidente de tránsito</td>
+                        <td>San Cristóbal Seguros</td>
+                        <td class="amt">$24.000.000</td>
+                        <td class="days">60 días</td>
+                    </tr>
+                    <tr>
+                        <td>Choque lateral (sin daños materiales)</td>
+                        <td>Federación Patronal Seguros</td>
+                        <td class="amt">$10.000.000</td>
+                        <td class="days">45 días</td>
+                    </tr>
+                    <tr>
+                        <td>Choque trasero</td>
+                        <td>Federación Patronal Seguros</td>
+                        <td class="amt">$12.000.000</td>
+                        <td class="days">30 días</td>
+                    </tr>
+                    <tr>
+                        <td>Le tocaron la moto</td>
+                        <td>Sancor Seguros</td>
+                        <td class="amt">$3.800.000</td>
+                        <td class="days">30 días</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- WHY US -->
+<section class="why" id="por-que">
+    <div class="container">
+        <div class="sec-hd">
+            <span class="tag">Por qué elegirnos</span>
+            <h2>Todo lo que necesitás, <span class="gold-text">en un solo lugar</span></h2>
+            <div class="divider"></div>
+            <p>Nos ocupamos de principio a fin. Vos solo contanos qué pasó — el resto lo hacemos nosotros.</p>
+        </div>
+        <div class="why-grid">
+            <div class="wcard">
+                <div class="wicon">🏥</div>
+                <h3>Equipo médico especializado</h3>
+                <p>Contamos con médicos especializados para realizar todos los estudios correspondientes a tu caso, sin que tengas que buscarlo por tu cuenta.</p>
+            </div>
+            <div class="wcard">
+                <div class="wicon">🔧</div>
+                <h3>Talleres en todo el país</h3>
+                <p>Tenemos talleres mecánicos asociados en todo el país para presupuestar los daños del vehículo de forma rápida y confiable.</p>
+            </div>
+            <div class="wcard">
+                <div class="wicon">📋</div>
+                <h3>Gestión completa</h3>
+                <p>Nos encargamos de todo el proceso, de principio a fin. Trámites, negociaciones, pericias y litigios — sin que tengas que preocuparte.</p>
+            </div>
+            <div class="wcard">
+                <div class="wicon">⚡</div>
+                <h3>Cobro rápido</h3>
+                <p>Nuestros casos se resuelven en 30 a 60 días en promedio. Sin demoras injustificadas ni esperas interminables.</p>
+            </div>
+            <div class="wcard">
+                <div class="wicon">💬</div>
+                <h3>Consulta sin cargo</h3>
+                <p>La primera consulta es completamente gratuita y sin compromiso. Contanos tu caso y te asesoramos de inmediato.</p>
+            </div>
+            <div class="wcard">
+                <div class="wicon">🕐</div>
+                <h3>Atención 24 horas</h3>
+                <p>Los accidentes no tienen horario. Nuestro equipo está disponible las 24 horas del día, los 7 días de la semana para urgencias.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CHECKLIST -->
+<section class="chk-section" id="accidente">
+    <div class="container">
+        <div class="chk-inner">
+            <div class="chk-content">
+                <span class="tag">Guía de actuación</span>
+                <h2>¿Qué hacer si tuviste un accidente?</h2>
+                <p>Aunque el golpe parezca leve, consultar a tiempo es fundamental. Seguí estos pasos para proteger tu reclamo:</p>
+                <ul class="chk-list">
+                    <li><span class="chk-num">1</span>Fotografiá tu registro de conducir</li>
+                    <li><span class="chk-num">2</span>Fotografiá tu DNI</li>
+                    <li><span class="chk-num">3</span>Fotografiá la compañía de seguro de la otra parte</li>
+                    <li><span class="chk-num">4</span>Tomá fotos del siniestro y todos los daños</li>
+                    <li><span class="chk-num">5</span>Hacé la denuncia en tu seguro (si tenés)</li>
+                    <li><span class="chk-num">6</span>Atención médica dentro de las 72hs del hecho</li>
+                </ul>
+            </div>
+            <div class="chk-visual">
+                <div class="big-card">
+                    <div class="emoji">⚖️</div>
+                    <h3>Consultá ahora, sin cargo</h3>
+                    <p>No importa cuándo fue el accidente ni si el golpe fue leve. Escribinos y evaluamos tu caso de forma gratuita y confidencial.</p>
+                    <a href="https://wa.me/541164608255?text=Hola!%20Quiero%20una%20consulta%20gratuita%20sobre%20mi%20caso" class="cta" target="_blank">
+                        📱 Consultar por WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ASEGURADORAS -->
+<section class="aseg">
+    <div class="container">
+        <div class="sec-hd">
+            <span class="tag">Aseguradoras</span>
+            <h2>Reclamamos contra <span class="gold-text">todas las aseguradoras</span></h2>
+            <div class="divider"></div>
+            <p>Si tu siniestro involucra alguna de estas compañías, ya tenemos experiencia reclamando y ganando.</p>
+        </div>
+        <div class="chips">
+            <div class="chip">Federación Patronal Seguros S.A.</div>
+            <div class="chip">Provincia Seguros</div>
+            <div class="chip">Allianz</div>
+            <div class="chip">La Segunda Seguros</div>
+            <div class="chip">La Caja Seguros</div>
+            <div class="chip">San Cristóbal Seguros</div>
+            <div class="chip">Sancor Seguros</div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contacto">
+    <div class="container">
+        <div class="contact-in">
+            <span class="tag" style="display:block;text-align:center;">Contacto</span>
+            <h2>¿Tenés dudas? <span class="gold-text">Hablemos.</span></h2>
+            <p>La consulta es gratuita. Contanos tu caso y te respondemos a la brevedad — disponibles las 24hs para urgencias.</p>
+            <div class="copt">
+                <a href="https://wa.me/541164608255?text=Hola!%20Quiero%20una%20consulta%20gratuita" class="ccard" target="_blank">
+                    <div class="ci">💬</div>
+                    <h3>WhatsApp</h3>
+                    <p>+54 11 6460-8255</p>
+                    <div class="csub">Disponible 24hs · Respuesta inmediata</div>
+                </a>
+                <a href="tel:+541123116358" class="ccard">
+                    <div class="ci">📞</div>
+                    <h3>Teléfono</h3>
+                    <p>11 2311-6358</p>
+                    <div class="csub">Línea alternativa</div>
+                </a>
+                <a href="https://www.instagram.com/accileyabogados/" class="ccard" target="_blank">
+                    <div class="ci">📸</div>
+                    <h3>Instagram</h3>
+                    <p>@accileyabogados</p>
+                    <div class="csub">1.726 seguidores</div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="foot-in">
+            <div class="foot-brand">
+                <div class="foot-brand-icon">⚖️</div>
+                <div>
+                    <div class="foot-name">Acci<span>Ley</span> Abogados</div>
+                    <div class="foot-tag">Especialistas en accidentes · Buenos Aires, Argentina</div>
+                </div>
+            </div>
+            <ul class="foot-links">
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#resultados">Resultados</a></li>
+                <li><a href="#accidente">¿Qué hacer?</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="https://www.instagram.com/accileyabogados/" target="_blank">Instagram</a></li>
+            </ul>
+            <div class="foot-copy">© 2025 AcciLey Abogados. Todos los derechos reservados.</div>
+        </div>
+    </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<div class="wa-float">
+    <a href="https://wa.me/541164608255?text=Hola!%20Quiero%20consultar%20sobre%20un%20accidente" class="wa-btn" target="_blank">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741 1.051 1.03-3.83-.235-.374A9.868 9.868 0 011.139 12C1.14 6.009 6.014 1.138 12.003 1.138a9.856 9.856 0 016.98 2.899A9.851 9.851 0 0121.87 12c-.003 5.99-4.876 10.862-10.819 10.862m9.19-20.052A11.9 11.9 0 0012.003 0C5.465 0 .116 5.348.113 11.886c0 2.096.547 4.142 1.588 5.945L0 24l6.304-1.654a11.88 11.88 0 005.693 1.448h.005c6.543 0 11.893-5.349 11.896-11.887A11.84 11.84 0 0021.241 3.734"/></svg>
+        <span class="wa-txt">Consulta gratis</span>
+    </a>
+    <div class="wa-pulse">1</div>
+</div>
+
+<script>
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    window.addEventListener('load', () => window.scrollTo(0, 0));
+
+    // Navbar shrink on scroll
+    window.addEventListener('scroll', () => {
+        document.getElementById('main-nav').style.padding = window.scrollY > 60 ? '10px 0' : '14px 0';
+    });
+
+    // Scroll reveal
+    const io = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.style.opacity = '1';
+                e.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.svc-card, .wcard, .ccard, .chk-list li').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(18px)';
+        el.style.transition = 'opacity .55s ease, transform .55s ease';
+        io.observe(el);
+    });
+</script>
+</body>
+</html>
